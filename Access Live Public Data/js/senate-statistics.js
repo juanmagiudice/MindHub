@@ -1,5 +1,15 @@
 
-
+	function listOfMembersByParty(prty, letra) {
+		dataSenate.forEach(miembros => {
+			if (miembros.party == letra) {
+				prty.push(miembros);
+			}
+		});
+	}
+	function getPartyLength(prty, letra){
+		listOfMembersByParty(prty,letra)
+		return prty.length;
+	}
 
 /* function listOfMembersByParty(lista, letra) {
 	dataSenate.results[0].members.forEach(miembros => {

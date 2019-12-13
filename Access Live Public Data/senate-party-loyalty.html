@@ -61,7 +61,7 @@
 			</div>
 			<div class="col-6">
 				<h2>Senate at a glance</h2>
-<!-- 				<table class="table">
+ 				<table class="table">
 					<thead>
 						<tr>
 							<th>Party</th>
@@ -77,12 +77,12 @@
 						</tr>
 						<tr>
 							<td>Republicans</td>
-							<td id="numOfRep">{{numOfRep}}</td>
+							<td id="numOfRep">{{numRep}}</td>
 							<td id="avrgVotesWPartyRep">{{avrgVotesWPartyRep}}</td>
 						</tr>
 						<tr>
 							<td>Independents</td>
-							<td id="numOfInd">{{numOfInd}}</td>
+							<td id="numOfInd">{{numInd}}</td>
 							<td id="avrgVotesWPartyInd">{{avrgVotesWPartyInd}}</td>
 						</tr>
 					</tbody>
@@ -98,14 +98,14 @@
 						<tr>
 							<th>Name</th>
 							<th>% Votes Against Party</th>
-							<th>% Party Votes</th>
+							<th>Total Votes</th>
 						</tr>
 					</thead>
 					<tbody id="leastLoyal">
-						<tr v-for='leastLoyal10Pct in partyInfo'>
-							<td>{{name}}</td>
-							<td>{{votesAgainstParty}}</td>
-							<td>{{partyVotes}}</td>
+						<tr v-for='value in leastLoyal10Pct'>
+							<td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+							<td>{{value.votes_against_party_pct}}</td>
+							<td>{{value.total_votes}}</td>
 						</tr>
 					</tbody>
 				</table>
@@ -118,18 +118,18 @@
 						<tr>
 							<th>Name</th>
 							<th>% Votes Against Party</th>
-							<th>% Party Votes</th>
+							<th>Total Votes</th>
 						</tr>
 					</thead>
 					<tbody id="mostLoyal">
-						<tr v-for='mostLoyal10Pct in partyInfo'>
-							<td>{{name}}</td>
-							<td>{{votesAgainstParty}}</td>
-							<td>{{partyVotes}}</td>
+						<tr v-for='value in mostLoyal10Pct'>
+							<td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+							<td>{{value.votes_against_party_pct}}</td>
+							<td>{{value.total_votes}}</td>
 						</tr>
 
 					</tbody>
-				</table> -->
+				</table>
 			</div>
 		</div>
 	</div>
@@ -145,8 +145,6 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="js/senate-data.js"></script>
-	<script src="js/senate-statistics.js"></script>
-	
 </body>
 
 </html>
