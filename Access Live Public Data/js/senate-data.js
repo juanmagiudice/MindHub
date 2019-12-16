@@ -12,57 +12,48 @@ $(function() {
 			dataSenate = data.results[0].members;
 			app.members = dataSenate;
 			console.log(dataSenate)
-			function listOfMembersByParty(prty, letra) {
-				dataSenate.forEach(miembros => {
-					if (miembros.party == letra) {
-						prty.push(miembros);
-					}
-				});
-			}
-			function getPartyLength(prty, letra) {
-				listOfMembersByParty(prty, letra);
-				return prty.length;
-			}
+		
+//    GLOBALES
 
-			function getVotesWPartyAvrg(party, key){
-				let votes = 0;
-				party.forEach(miembros =>{
-						 votes += miembros.votes_with_party_pct
-				 })
-		 statistics[key]= (votes / party.length).toFixed(2)
-		} 
+			app.numDem = getPartyLength(dem, 'D', dataSenate);
+			app.numRep = getPartyLength(rep, 'R', dataSenate);
+			app.numInd = getPartyLength(ind, 'I', dataSenate);
+			app.avrgVotesWPartyDem = getVotesWPartyAvrg(dem, dataSenate)
+			app.avrgVotesWPartyRep = getVotesWPartyAvrg(rep, dataSenate)
+			app.avrgVotesWPartyInd = getVotesWPartyAvrg(ind, dataSenate)
 
-			let votesWPartyPctList = [];
-			function llenarVotesWParty() {
-				dataSenate.forEach(miembros => {
-					votesWPartyPctList.push(miembros);
-				});
-			}
-			function sortMembersByVotesWParty() {
-				votesWPartyPctList.sort(function(a, b) {
-					return a.votes_with_party_pct - b.votes_with_party_pct;
-				});
-			}
-			llenarVotesWParty();
-			sortMembersByVotesWParty();
-			getVotesWPartyAvrg(party, key)
+//    PARTY LOYALTY
+
+			llenarVotesWParty(dataSenate);
+			sortMembersByVotesWParty(votesWPartyPctList);	
 
 			let leastLoyal10Pct = []
 			let mostLoyal10Pct = []
-			let tenPct = votesWPartyPctList.length * 10 / 100;
+			let tenPctVotesWParty = votesWPartyPctList.length * 10 / 100;
+			
+			leastLoyal10Pct = votesWPartyPctList.slice(0, tenPctVotesWParty)
+			mostLoyal10Pct = votesWPartyPctList.slice(votesWPartyPctList.length - tenPctVotesWParty, votesWPartyPctList.length).reverse()
 
-			leastLoyal10Pct = votesWPartyPctList.slice(0, tenPct)
-			mostLoyal10Pct = votesWPartyPctList.slice(votesWPartyPctList.length - tenPct, votesWPartyPctList.length).reverse()
-
-			app.numDem = getPartyLength(dem, 'D');
-			app.numRep = getPartyLength(rep, 'R');
-			app.numInd = getPartyLength(ind, 'I');
 			app.leastLoyal10Pct = leastLoyal10Pct
 			app.mostLoyal10Pct = mostLoyal10Pct
 
-			console.log(app.numDem);
-			console.log(app.numRep);
-			console.log(app.numInd);
+
+
+//		ATENDANCE
+
+			llenarMissedVotes(dataSenate)
+			sortMembersByMissedVotes(missedVotesPctList)
+
+			let leastEngaged10Pct = []
+			let mostEngaged10Pct = []
+			let tenPctMissedVotes = missedVotesPctList.length * 10 / 100;
+
+			mostEngaged10Pct = missedVotesPctList.slice(0, tenPctMissedVotes)
+			leastEngaged10Pct = missedVotesPctList.slice(missedVotesPctList.length - tenPctMissedVotes, missedVotesPctList.length).reverse()
+
+			app.leastEngaged10Pct = leastEngaged10Pct
+			app.mostEngaged10Pct = mostEngaged10Pct
+
 		})
 
 		.catch(err => console.log(err));
@@ -78,7 +69,9 @@ let app = new Vue({
 		avrgVotesWPartyDem: 0,
 		avrgVotesWPartyRep: 0,
 		avrgVotesWPartyInd: 0,
-		leastLoyal10Pct: 0,
-		mostLoyal10Pct: 0,
+		leastLoyal10Pct: [],
+		mostLoyal10Pct: [],
+		leastEngaged10Pct: [],
+		mostEngaged10Pct: [],
 	}
 });
