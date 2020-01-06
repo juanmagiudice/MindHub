@@ -1,11 +1,12 @@
 
 section{
-  margin: 5vh 5vw;
   max-width: 50%;
-  min-height: 90vh;
-
+  min-height: 86vh;
 } 
 
+.contact{
+  min-height: 50vh;
+}
 
 .green-line{
   background: lightgreen;
@@ -19,6 +20,18 @@ h1{
   text-decoration-color: lightgreen;
 }
 
-.navbar{
-  position: fixed;
+a{
+  color: lightgreen;
 }
+
+img{
+  max-width: 30vh;
+  width: 100%;
+  height: auto;
+
+ }
+
+
+ .objInvisNav{
+    padding: 1.5em 1vw;
+ }

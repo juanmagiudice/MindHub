@@ -5,28 +5,46 @@
   <meta name="author" content="Lee Knowlton" />
   <meta name="description" content="The NYSL Homepage" />
   <title>NYSL Home - Northside Youth Soccer League</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="css/main.css" rel="stylesheet" type="text/css" />
+  <link rel='shortcut icon' type='image/x-icon' href='doc/soccer-svgrepo-com.ico' />
 </head>
 	
 <body>
   <div class="container-fluid">    
-
-    <nav id="navbar" class="navbar navbar-fixed-right">
-      <ul class="nav navbar-nav">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About NYSL</a></li>
-        <li><a href="#registration">Registration</a></li>
-        <li><a href="#game-info">Game Information</a></li>
-        <li><a href="#rules">Rules</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About NYSL</a></li>
+            <li><a href="#registration">Registration</a></li>
+            <li><a href="#game-info">Game Information</a></li>
+            <li><a href="#rules">Rules</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
 
   
       <div align='center'>
         <div id="content">
-          <section id='home'>
+
+          <div class='objInvisNav' id='home'></div>
+          <section>
+
             <div id="pageheader">
               <h1>Upcoming Events</h1>
             </div>  
@@ -48,15 +66,19 @@
                   <h2>September 1</h2>
                   <p class="indent"> First Game of the Season (Check Game Schedule for details)</p>
                 </div>
-              
+                <img src="doc/soccer-svgrepo-com.svg">
+
             </div>
+
+
           </section>
-      
+
+          <div class='objInvisNav' id='about'></div>
           <div class="green-line"></div>
     
     
-          <section id='about'>
-            <div id="pageheader">
+          <section>
+            <div>
               <h1>About</h1>
             </div>
                     
@@ -71,13 +93,17 @@
             <h3>General Information</h3>
             <p class="indent">The Northside Youth Soccer League was established in 1996 to provide athletes residing in Chicago's northside neighborhoods an environment in which to learn and play soccer. To be a member of NYSL, you must be between the ages of 4 - 12 and reside in a Chicago northside neighborhood. NYSL is run by a small full-time staff, and relies on the generous volunteer time of parents and previous league members.</p>
             </div>
+
+            <img src="doc/trophy-svgrepo-com.svg">
+
           </section>
       
+
+          <div class='objInvisNav' id='registration'></div>
           <div class="green-line"></div>
-    
-    
-          <section id='registration'>
-            <div id="pageheader">
+  
+          <section>
+            <div>
               <h1>Registration Form</h1>
             </div>    
           
@@ -85,7 +111,8 @@
             <div id="bodycontent">
               <form method="get" action="show_data.html"> 
                 <div class="stylized">
-                  <div align='left'>
+                  <div align='left'> 
+                    <img src="doc/soccer-boots-svgrepo-com.svg" align='right'>
                     <div>
                       <div>
                         <label for="first_name">Player's First Name:</label>
@@ -110,28 +137,29 @@
                         <input type="text" name="zip" id="zip"/>
                       </div>
                     </div>
+                      
+                    <div>
+                      <div>
+                        <label for="birth_date">Birth Date (mm/dd/yyyy):</label>
+                        <input type="text" name="birth_date" id="birth_date"/>
+                      </div>
+                      <div>
+                        <label for="parent_guardian">Parent/Guardian Name:</label>
+                        <input type="text" name="parent_guardian" id="parent_guardian"/>
+                      </div>
+                    </div>
+                    <div>
+                      <div>
+                        <label for="contact_phone">Contact Phone:</label>
+                        <input type="text" name="contact_phone" id="contact_phone"/>
+                      </div>
+                      <div>
+                        <label for="contact_email">Contact Email:</label>
+                        <input type="text" name="contact_email" id="contact_email"/>
+                      </div>
+                    </div>
                     
-                  <div>
-                    <div>
-                      <label for="birth_date">Birth Date (mm/dd/yyyy):</label>
-                      <input type="text" name="birth_date" id="birth_date"/>
-                    </div>
-                    <div>
-                      <label for="parent_guardian">Parent/Guardian Name:</label>
-                      <input type="text" name="parent_guardian" id="parent_guardian"/>
-                    </div>
                   </div>
-                  <div>
-                    <div>
-                      <label for="contact_phone">Contact Phone:</label>
-                      <input type="text" name="contact_phone" id="contact_phone"/>
-                    </div>
-                    <div>
-                      <label for="contact_email">Contact Email:</label>
-                      <input type="text" name="contact_email" id="contact_email"/>
-                    </div>
-                  </div>
-                </div>
                 </div>
                 <fieldset>
                   <legend>Gender:</legend>
@@ -266,14 +294,22 @@
               </form>
             </div>
           </section>
-    
+
+
+          <div class='objInvisNav' id='game-info'></div>
           <div class="green-line"></div>
     
-          <section id='game-info'>
-            <div id="bodycontent">
+          <section>
+            <div>
+              <h1>Game Information</h1>
+
               <h2><em>Fall Schedule</em></h2>
               <p class="announcement">*All games take place on Saturday</p>
-              
+            </div>           
+
+            <img src="doc/soccer-field-svgrepo-com (1).svg" align='right'>
+
+            <div>
               <div id="infotable">
                 <table>
                  <tr>
@@ -389,15 +425,18 @@
              </div>
           </section>
     
-          <div class="green-line"></div>
 
-          <section id='rules'>
-            <div id="bodycontent">
+          <div class='objInvisNav' id='rules'></div>
+          <div class="green-line"></div>
+          <section>
+            <div>
               <div id="titlecenter">
                 <h1>Northside Youth Soccer League</h1>
                 <h2>Rules of Play &amp; Policies</h2>
                 <p>FIFA rules shall govern NYSL play except as modified herein.</p>
               </div>
+
+              <img src='doc/referee-svgrepo-com.svg'>
               
               <div id="rules">
                 <h2>Sportsmanship</h2>
@@ -532,9 +571,9 @@
              </div>
           </section>
 
-          <div class="green-line"></div>
+          <div class="green-line" id='contact'></div>
 
-          <section id='contact'>
+          <section class='contact'>
             <div id="container">
               <div id="pageheader">
                 <h1>Contact</h1>
@@ -547,6 +586,8 @@
               </div>
             </div>
 
+            <img src="doc/soccer-field-svgrepo-com.svg"
+
           </section>
 
         </div>
@@ -557,5 +598,6 @@
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
 </body>
 </html>
