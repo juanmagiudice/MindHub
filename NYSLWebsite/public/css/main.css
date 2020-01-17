@@ -1,32 +1,36 @@
-
 section{
   max-width: 60%;
-  min-height: 95vh;
+  margin-top: 6em;
 } 
 
-.contact{
-  min-height: 50vh;
-}
-
-
-.espacioAbajoDeNavbar{
-  padding: 1.5em 1vw;
-}
 
 h2{
   text-decoration-line: underline;
   text-decoration-color: lightgreen;
 }
 
-
 img{
   max-width: 30vh;
   width: 100%;
   height: auto;
-
  }
 
- .oculto{
+.ocultar{
+    display: none;
+ }
+
+
+ #app > section{
    display: none;
  }
 
+ #app > section.current {
+  display: block;
+ }
+
+ ul, ol{
+  padding: 0;
+}
+
+
+ 
