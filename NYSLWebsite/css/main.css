@@ -1,0 +1,37 @@
+
+section{
+  max-width: 50%;
+  min-height: 95vh;
+} 
+
+.contact{
+  min-height: 50vh;
+}
+
+.green-line{
+  background: lightgreen;
+  padding: 0.1em 1vw;
+  margin: 0 5%;
+}
+
+
+h2{
+  text-decoration-line: underline;
+  text-decoration-color: lightgreen;
+}
+
+a{
+  color: lightgreen;
+}
+
+img{
+  max-width: 30vh;
+  width: 100%;
+  height: auto;
+
+ }
+
+
+ .objInvisNav{
+    padding: 1.5em 1vw;
+ }

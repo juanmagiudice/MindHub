@@ -1,0 +1,32 @@
+
+section{
+  max-width: 60%;
+  min-height: 95vh;
+} 
+
+.contact{
+  min-height: 50vh;
+}
+
+
+.espacioAbajoDeNavbar{
+  padding: 1.5em 1vw;
+}
+
+h2{
+  text-decoration-line: underline;
+  text-decoration-color: lightgreen;
+}
+
+
+img{
+  max-width: 30vh;
+  width: 100%;
+  height: auto;
+
+ }
+
+ .oculto{
+   display: none;
+ }
+
