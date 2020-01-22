@@ -1,8 +1,8 @@
+
 section{
   max-width: 60%;
   margin-top: 6em;
-} 
-
+}
 
 h2{
   text-decoration-line: underline;
@@ -20,11 +20,11 @@ img{
  }
 
 
- #app > section{
+ #app > .pagina{
    display: none;
  }
 
- #app > section.current {
+ #app > .pagina.current {
   display: block;
  }
 
@@ -33,4 +33,12 @@ img{
 }
 
 
- 
+#Messages{
+  margin-top: 6em;
+}
+
+
+.mdl-layout__container{
+  max-width: 98%;
+  max-height: 85%;
+}
